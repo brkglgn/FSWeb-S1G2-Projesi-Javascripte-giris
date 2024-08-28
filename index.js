@@ -66,7 +66,8 @@ Aşağıdakileri yap:
  */
 
 function kopeginYasi(yas) {
-  let kopek = yas/7
+  let kopek = yas/7;
+  return kopek;
 }
 
 /* Görev 3 */
@@ -84,7 +85,26 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar) {
-  /*buraya kodunu yazabilirsin*/
+  let rastgele = math.floor(maht.random()*3)
+
+  if(rastgele === 2){
+    bilgisayar = "makas"
+  } else if (rastgele === 1){
+    bilgisayar = "kağıt"
+  } else {
+    bilgisayar = "taş"
+  }
+
+  if(bilgisayar === "makas" && oyuncu === "taş" 
+    || bilgisayar === "kağıt" && oyuncu === "makas"
+    || bilgisayar === "taş" && oyuncu === "kağıt"
+  ){
+    return "Kazandın!"
+  } else if (bilgisayar === oyuncu){
+    return "Beraberlik"
+  } else {
+    return "Kaybettin!"
+  }
 }
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
